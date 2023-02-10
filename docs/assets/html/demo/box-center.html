@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>纯 CSS 盒子水平垂直居中的实现方法</title>
+	<style>
+		body{
+			font-family: "Open Sans",arial,x-locale-body,sans-serif;
+			font-size: 12px;
+		}
+
+		.box{
+			width: 300px;
+			height: 200px;
+			background-color: #000;
+			margin: 10px 0;
+		}
+		.box .box-inner{
+			width: 200px;
+			height: 100px;
+			background-color: #eee;
+			display:table; /*文字水平居中*/
+			text-align: center; /*文字水平居中*/
+		}
+		/*文字垂直居中*/
+		.box .box-inner:after{
+			vertical-align:middle;
+			display:table-cell;
+		}
+
+		/*.box:after{
+			content:'.';
+			text-indent: -999px;
+			width: 20px;
+			height: 20px;
+			background-color: #ddd;
+		}*/
+
+		/*-------------------*/
+		/*-------------------*/
+		/*-------------------*/
+
+		/* box-1 水平居中和垂直居中 flex */
+		.box-1{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		/*文字*/
+		.box-1 .box-inner:after{
+			content:'flex';
+			/*text-indent: -999px;*/
+		}
+
+
+		.box-2 {
+		    display: table-cell;
+			text-align: center;/*水平居中*/
+			vertical-align: middle; /*垂直居中*/
+		}
+		.box-2 .box-inner {
+			display: inline-block; /*防止块级元素宽度独占一行，内联元素可不设置*/
+		}
+		/*文字*/
+		.box-2 .box-inner:after{
+			content:'table 有点特殊';
+		}	
+
+		/*absolute+transform 水平垂直居中*/
+		.box-3 {
+			position: relative;
+		}
+		.box-3 .box-inner {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		/*文字*/
+		.box-3 .box-inner:after{
+			content:'absolute + transform';
+		}	
+
+		/*relative+absolute + negative margin*/
+		.box-4 {
+			position: relative;
+		}
+		.box-4 .box-inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -50px 0 0 -100px;
+		}
+		/*文字*/
+		.box-4 .box-inner:after{
+			content:'relative + absolute + negative margin';
+		}	
+
+		/*绝对定位方式+四个方向置0*/
+		.box-5 {
+			position: relative;
+		}
+		.box-5 .box-inner {
+			position: absolute;
+		    margin:auto;
+		    top: 0; left: 0; bottom: 0; right: 0;
+		}
+		/*文字*/
+		.box-5 .box-inner:after{
+			content:'relative + absolute + auto + 0000';
+		}
+
+		/*子元素未知宽高的水平垂直居中*/
+		.box-6 {
+			position: relative;
+			top: 0; left: 0; right: 0; bottom: 0;
+			display: -webkit-box;
+			-webkit-box-align: center;
+			-webkit-box-pack: center;
+		}
+		.box-6 .box-inner {
+			-webkit-box-flex: 0;
+		}
+		/*文字*/
+		.box-6 .box-inner:after{
+			content:'box-align and box-pack';
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1>纯 CSS 盒子水平垂直居中的实现方法</h1>
+
+	<p>Flex 布局技巧 ↓</p>
+	<div class="box box-1">
+		<div class="box-inner"></div>
+	</div>
+
+	<p>table 水平垂直居中 ↓</p>
+	<div class="box box-2">
+		<div class="box-inner"></div>
+	</div>
+
+	<p>absolute + transform 水平垂直居中 ↓</p>
+	<div class="box box-3">
+		<div class="box-inner"></div>
+	</div>
+
+	<p>relative + absolute + negative margin ↓</p>
+	<div class="box box-4">
+		<div class="box-inner"></div>
+	</div>
+
+	<p>绝对定位方式 四个方向置0 marign:auto ↓</p>
+	<div class="box box-5">
+		<div class="box-inner"></div>
+	</div>
+	
+	<p>子元素未知宽高的水平垂直居中 ↓</p>
+	<div class="box box-6">
+		<div class="box-inner"></div>
+	</div>
+
+	<ul>
+		<p>参考资料：</p>
+		<li><a href="https://github.com/hawx1993/tech-blog/issues/12">https://github.com/hawx1993/tech-blog/issues/12</a></li>
+		<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox</a></li>
+	</ul>
+</body>
+</html>
