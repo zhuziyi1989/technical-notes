@@ -1,18 +1,16 @@
-# test11111
-
-A static site base on [dumi](https://d.umijs.org).
+# 📚 一份前端知识体系指南 & 私人技术笔记
 
 ## Development
 
 ```bash
 # install dependencies
-$ npm install
+$ yarn
 
 # start dev server
-$ npm start
+$ yarn start
 
 # build docs
-$ npm run build
+$ yarn build
 ```
 
 ## LICENSE

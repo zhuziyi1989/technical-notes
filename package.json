@@ -1,7 +1,7 @@
 {
-  "name": "test11111",
+  "name": "frontNotes",
   "version": "1.2.0",
-  "description": "A static site based on dumi",
+  "description": "一份前端知识体系指南&私人技术笔记",
   "license": "MIT",
   "scripts": {
     "build": "dumi build",

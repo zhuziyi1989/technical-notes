@@ -40,8 +40,8 @@ export default defineConfig({
     // helmetIcon: '🍺',
     settingPanelVisible: true,
     thumbBackground: true,
-    description: '111111111111111111111',
-    keywords: '2222',
+    description: 'no desc',
+    keywords: 'no keywords',
     author: 'zhuziyi',
     social: {
       github: {

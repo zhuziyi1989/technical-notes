@@ -2,8 +2,6 @@
 group:
   title: Linux
   order: 2
-title:
-order: 1
 ---
 
 # Linux 远程登录欢迎语

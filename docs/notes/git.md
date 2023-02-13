@@ -1,7 +1,7 @@
 ---
 group:
   title: Git
-  order: 2
+  order: 6
 ---
 
 # Git 相关笔记

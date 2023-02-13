@@ -1,7 +1,7 @@
 ---
 nav:
   title: 面试
-  order: -1
+  order: 2
 group:
   title: 开始
   order: -1

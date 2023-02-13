@@ -1,3 +1,9 @@
+---
+group:
+  title: Vscode
+  order: 7
+---
+
 # 文本编辑器的使用
 
 🍇 除特殊说明，均以 macOS 为例

@@ -2,8 +2,6 @@
 group:
   title: Linux
   order: 2
-title:
-order: 2
 ---
 
 # 防火墙配置、管理与实践

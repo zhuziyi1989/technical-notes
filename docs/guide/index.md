@@ -1,7 +1,7 @@
 ---
 nav:
   title: 指南
-  order: -1
+  order: 6
 group:
   title: 介绍
   order: -1

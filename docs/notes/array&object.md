@@ -4,7 +4,7 @@ nav:
   order: 2
 group:
   title: Array
-  order: 1
+  order: 3
 ---
 
 # 数组和对象的方法

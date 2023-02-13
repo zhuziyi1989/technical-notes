@@ -2,8 +2,6 @@
 group:
   title: Linux
   order: 2
-title:
-order: 3
 ---
 
 # VIM 速查手册

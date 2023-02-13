@@ -4,7 +4,7 @@ nav:
   order: 2
 group:
   title: Array
-  order: 1
+  order: 4
 ---
 
 # Array 数组的简单应用
