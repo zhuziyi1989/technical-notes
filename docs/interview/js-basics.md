@@ -19,13 +19,14 @@ order: 1
 
 - Null （表示缺少的标识，指示变量未指向任何对象）
 - Undefined（一个没有被赋值的变量会有个默认值 undefined，也就说已存在，但还没值）
-- Number（基于 IEEE 754 标准的`双精度` 64 位`二进制`格式的值（-(2^63 -1) 到 2^63 -1））
+- Number（基于 IEEE 754 标准的`双精度` 64 位`二进制`格式的值（-(2^53 -1) 到 2^53 -1））
 - String
 - Boolean
 - Symbol (ECMAScript 6 新定义，用于唯一的标识符，比如身份证号码。)
-- BigInt（ECMAScript 新提案，用于任意长度的整数。）
+- BigInt（ECMAScript 2020 新提案，用于任意长度的整数。）
 
 > - 在 JavaScript 中，Number 可以准确表达的最大数字是 2^53，比 2^53 大的所有数字可以使用 BigInt 表达。
+> - 如果后端 API 返回了一个大于 2^53 的数字怎么办？ 可让后端转换成字符串形式
 > - `undefined`和`null`的一些故事 ▶ [Link](https://2ality.com/2021/01/undefined-null-revisited.html)
 
 ### 2).复杂数据类型
@@ -40,11 +41,12 @@ order: 1
 ## 2. script 标签属性
 
 ```javascript
-// <script src="example-url.js" async或defer type="text/javascript"></script>
+<script src="example-url.js" async或defer type="text/javascript"></script>
 ```
 
 async 规定一旦脚本可用，则会异步执行。
 defer 属性规定是否对脚本执行进行延迟，直到页面加载为止。
+一般还是把应用的执行脚本（非类库）放在 body 结束的位置。
 
 详细介绍可以阅读 MDN [《 \<script>-HTML 章节 》](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)。
 
@@ -542,8 +544,9 @@ Object.assign({}, state, { visibilityFilter: action.filter });
 
 解决方案：
 
-1. 第一种，先升幂降幂。
-2. 第二种，加强版 toFixed 方法
+1. 第一种，先升幂，再降幂。
+2. 第二种，加强版 toFixed 方法。
+3. 其他第三方类库（big.js/bignumber.js/math.js/decimal.js 等）
 
 参考资料：： [浮点数为什么不精确？](https://juejin.im/entry/575543857db2a2006993114e)
 

@@ -13,8 +13,8 @@ export default defineConfig({
   base: withGH(''),
   publicPath: withGH(''),
   locales: [
+    { id: 'zh-CN', name: '中文' },
     { id: 'en-US', name: 'English' },
-    { id: 'zh-CN', name: '中文' }
   ],
   devtool: 'cheap-module-source-map',
   sitemap: {
@@ -40,17 +40,17 @@ export default defineConfig({
     // helmetIcon: '🍺',
     settingPanelVisible: true,
     thumbBackground: true,
-    description:'111111111111111111111',
-    keywords:'2222',
-    author:'zhuziyi',
+    description: '111111111111111111111',
+    keywords: '2222',
+    author: 'zhuziyi',
     social: {
       github: {
-        name: 'dumi-theme-chakra',
-        link: 'https://github.com/innocces/dumi-theme-chakra'
+        name: 'zhuziyi1989',
+        link: 'https://github.com/zhuziyi1989'
       },
-      discord: {
-        name: 'maryoku-ui-discord',
-        link: 'https://discord.gg/N82HK72uJk'
+      twitter: {
+        name: 'zhuziyi',
+        link: 'https://twitter.com/zhuziyi'
       }
     },
     search: {

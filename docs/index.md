@@ -19,15 +19,6 @@ features:
   - title: 开发指南
     icon: https://gw.alipayobjects.com/zos/bmw-prod/d1ee0c6f-5aed-4a45-a507-339a4bfe076c/k7bjsocq_w144_h144.png
     description: 体系化整理，随时查阅具体技术细节，方便前端开发者日常开发
-  - title: Hello
-    emoji: 💎
-    description: Put hello description here
-  - title: World
-    emoji: 🌈
-    description: Put world description here
-  - title: '!'
-    emoji: 🚀
-    description: Put ! description here
 footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by tsejx && zhuziyi
 ---
 
@@ -37,7 +28,7 @@ footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by tse
 
 ### 目录
 
-1. [JS 语言基础](/interview/java-script/js-basics)
+1. [JS 语言基础](/interview/js-basics)
 2. [客户端及其内核原理](#2客户端及其内核原理)
 3. [服务端应用](#3服务端应用)
 4. [网络原理](#4网络原理)
@@ -128,3 +119,6 @@ footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by tse
 
 - 优缺点分析： 我觉得我有时候会过分在意别人的感受， 比方说，不愿意直接表达不同意见，因为觉得会让对方丢面子， 其实这样做很不利于快速有效地开展工作。我希望自己能够逐渐学会更加爽快， 对人对事更加直接。
 - 项目分析：待添加
+
+Power by [Dumi](https://d.umijs.org/)
+Themes Power by [dumi-theme-chakra](https://github.com/innocces/dumi-theme-chakra)
