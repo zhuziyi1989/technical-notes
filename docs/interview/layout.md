@@ -16,7 +16,6 @@ group:
 
 ## 2. 定位（[MDN](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Positioning)）
 
-- BOM 盒模型(IE 盒模型的内容含 border 和 padding，box-sizing: border-box; W3C 盒模型 box-sizing: content-box) [box-sizing MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
 - 定位 Position（absolute/relative/fixed/[sticky](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Positioning#position_sticky)）
 - 浮动 float（清除浮动？空标签 clear:both、伪类、父级设置 overflow:hidden）
 - [块级格式化上下文（BFC）](https://zhuanlan.zhihu.com/p/25321647) 可触发 BFC：根元素、浮动元素、绝对定位、display(inline-block、table-cells、flex)、overflow(hidden、auto、scroll)
@@ -26,19 +25,23 @@ group:
 ## 3. 布局
 
 - 纯 CSS 盒子水平垂直居中的实现方法 [Demo](https://interview.jandou.com/demo/box-center.html)
-- Flex
-- Grid
+- [Flex](https://zhuanlan.zhihu.com/p/25303493) 、[@MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) 、[flex-direction](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg): row/column/row-reverse/column-reverse 起始线和终止线、[justify-content](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
+- Grid 布局 ❌
+- BOM 盒模型(IE 盒模型的内容含 border 和 padding，box-sizing: border-box; W3C 盒模型 box-sizing: content-box) [box-sizing MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
+- calc 动态计算
+- 逻辑像素、设备像素、物理像素 dpr ❌
 
 ## 4.移动端布局方案
 
 - flex （[图解 CSS3 Flexbox 属性](https://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html) 、[一份 Flex 完整指南](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)）
   - 问题 1：解释 CSS 语句 “flex: 0 1 auto” flex-grow flex-shrink flex-basis [参考链接](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/380)
   - 请注意`float`，`clear`、`vertical-align`对弹性项目没有影响。
-- css-grid
-- rem 单位的概念
+- em/rem 单位的概念
 - vw 和 vh（按视窗的百分比计算，1vw 为窗口的 1%，100vw 撑满，[MDN](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Values_and_units)）
 - 媒体查询
 - 百分比布局
+- 移动端 1px 问题
+- viewport
 
 问题例子：
 
@@ -48,7 +51,7 @@ group:
 
 ## CSS 选择器
 
-- 权重（！important → 行内 → id → class/属性/伪类 → 元素标签 → 其他）
+- 权重（!important → 行内 → id → class/属性/伪类 → 元素标签 → 其他）
 
 - 选择器 nth-child() [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child)
 

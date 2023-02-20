@@ -3,7 +3,7 @@ nav:
   title: 关于面试
   order: 2
 group:
-  title: 自测目录
+  title: 自测问题
   order: 7
 title: 前端框架
 order: 4
@@ -21,6 +21,9 @@ order: 4
 - computed 的实现原理
 - Watch 的运行原理
 - slot 插槽
+- `this.$refs.xx` 在 mounted 中获取 DOM 元素为 undefined
+- 循环列表数据更新后，获取列表 DOM 的顺序问题
+- Vue 中 8 种组件通信方式？ [link](./vue)
 
 ### React
 
@@ -42,6 +45,7 @@ order: 4
 - react-router-dom（BrowserRouter 和 HashRoauter） Link
 - 错误边界 发生错误，优雅降级，退回 UI
 - Fragments 多个组件包裹问题
+- [为什么 props 复制给 state 会产生 bug ?](https://zh-hans.reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html)
 
 - 适当地使用`shouldComponentUpdate`生命周期方法。 它避免了子组件的不必要的渲染。
 - 如何在重新加载页面时保留数据 localstorage 多表单应用优化 [示意图](https://image.fundebug.com/2019-05-31-10.png)

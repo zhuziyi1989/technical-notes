@@ -11,6 +11,11 @@ order: 1
 
 # JavaScript 语言基础
 
+## 0. JavaScript 技术概览
+
+运行宿主：浏览器、Node
+技术标准：ECMAScript、DOM/BOM API（浏览器）、WEB API（Node 文件、数据库、网络、与操作系统的交互）=
+
 ## 1. JavaScript 数据类型
 
 ### 1).基本数据类型
@@ -237,7 +242,7 @@ isNaN(1 + null) // false
 isNaN(1 + undefined) // true
 ```
 
-### 8. 哪些值是 false
+## 8. 哪些值是 false
 
 可用 Boolean() 去检测，以下在条件语句中被认为是 false
 
@@ -248,7 +253,7 @@ isNaN(1 + undefined) // true
 - `NaN`
 - `0`（两个`+0`和`-0`）
 
-### 9. 什么是函数式编程？
+## 9. 什么是函数式编程？
 
 **函数式编程** （通常简称为 FP）是指通过复合 **纯函数** 来构建软件的过程，它避免了**共享的状态（share state）**、**易变的数据(mutable data)**、以及**副作用(side-effects)**。函数式编程是**声明式**而不是**命令式**，并且应用程序状态通过纯函数流转。对比面向对象编程，后者的应用程序状态通常是共享并共用于对象方法。
 
@@ -266,7 +271,7 @@ Via：[征服 JavaScript 面试: 什么是函数式编程？| Eric Elliott](http
 
 什么是纯函数？ https://t.cn/EJELtXz
 
-### 10. DOM 事件绑定的几种方式？
+## 10. DOM 事件绑定的几种方式？
 
 - 1. 在 DOM 元素上直接绑定（不推荐）
 
@@ -314,7 +319,7 @@ _DOM2 级的几个优点:_
 ③ 冒泡 + 捕获：相当于每个节点同一个事件，至少 2 次处理机会
 ④ 同一类事件，可以绑定多个函数
 
-### 11. 事件冒泡和捕获
+## 11. 事件冒泡和捕获
 
 事件冒泡：子元素的触发事件会一直向父节点传递，一直到根结点停止。此过程中，可以在每个节点捕捉到相关事件。可以通过`stopPropagation`方法终止冒泡。
 
@@ -322,7 +327,7 @@ _DOM2 级的几个优点:_
 
 事件捕获的传播方向：根节点 → 子元素
 
-### 12. 事件委托的优势 ❗️
+## 12. 事件委托的优势 ❗️
 
 使用事件委托是需要在 DOM 树中尽量最高的层次节点上添加一个事件处理程序，因为子节点的事件会冒泡，最终会被委托节点处理的，优势：
 
@@ -332,22 +337,22 @@ _DOM2 级的几个优点:_
 
 ③ 整个页面占用的内存空间较少，性能也得到了大大的提升。
 
-### 13. 值类型和引用类型、变量提升
+## 13. 值类型和引用类型、变量提升
 
 1. var 的函数作用域、有变量提升
 2. let 和 const 定义前的区域为`暂时性死区`
 3. 由多个执行上下文的变量对象构成的链表叫做作用域链。
 
-### 14. 立即执行函数, 模块化, 命名空间
+## 14. 立即执行函数, 模块化, 命名空间
 
 IIFE（Immediately Invoked Function Expressions）代表立即执行函数。
 
 1. (function(){ … })() 私有化变量
 2. ES6+ 的 import、export 模块化相对比 Common.js 的优势？
 
-### 15. 剩余参数、默认参数和解构赋值参数
+## 15. 剩余参数、默认参数和解构赋值参数
 
-## 16. setTimeout 和 setInterval ❗️❗️
+## 16. ⭐️setTimeout 和 setInterval
 
 ### 1).setTimeout 导致实例引用的丢失
 
@@ -400,26 +405,23 @@ cat.__proto__ = Animal.prototype;
 Animal.call(cat); //用 call 将环境上下文绑定到实例cat上，并运行构造函数 Animal，返回值给 cat
 ```
 
-## 19. 关于“闭包”的相关话题 ❗️❗️
+## 19. 关于“闭包”
 
 关键点在于一个函数返回另一个函数，另一个函数就是“闭包”，可能造成内存泄漏（可联想到垃圾回收机制）
 
-## 20. 原型、原型链、继承 ❗️❗️❗️
+参考资料：[JavaScript 深入之闭包](https://github.com/mqyqingfeng/Blog/issues/9)
 
-关于原型继承， 我们应该记住以下几条：
+## 20. 🎄 原型、原型链、原型链继承
 
-- 类属性使用 this 绑定
-- 类方法使用 prototype 对象来绑定
-- 为了继承属性， 使用 call 函数来传递 this
-- 为了继承方法, 使用 Object.create 连接父和子的原型
-- 始终将子类构造函数设置为自身，以获得其对象的正确类型
-- 掌握 `hasOwnProperty` 方法的使用
+### 1). 什么是原型链？
 
-一个对象都有原型对象，且原型对象是独立的！每个*实例*对象（ object ）都有一个私有属性（称之为 \_\_proto\_\_ ）指向它的构造函数的*原型对象*（**prototype** ）。该原型对象也有一个自己的原型对象( \_\_proto\_\_ ) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。如图：
+​ 当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 Object.prototype 的原型时，此时原型为 null，查找停止。 这种通过原型链接的逐级向上的查找链被称为原型链。
+
+每个对象都有它的原型对象，且原型对象是独立的！每个*实例*对象（ object ）都有一个私有属性（称之为 \_\_proto\_\_ 或 [[prototype]]）指向它的构造函数的*原型对象*（**prototype** ）。该原型对象也有一个自己的原型对象( \_\_proto\_\_ ) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。如图：
 
 <img src="../assets/images/prototype.jpg" style="zoom:50%;" />
 
-当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该*对象的原型*，以及该*对象的原型的原型*，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾(null)。
+当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该*对象的原型*，以及该*对象的原型的原型*，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾（null）。
 
 原型链查找图：
 
@@ -430,7 +432,20 @@ Object.getPrototypeOf(Object.prototype); //null
 // 图中可以看出，Object的原型是null，即没有原型。
 ```
 
-> 参考资料：[继承与原型链- JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+### 2). 什么是原型继承？
+
+​ 一个对象可以使用另外一个对象的属性或者方法，就称之为继承。具体是通过将这个对象的原型设置为另外一个对象，这样根据原型链的规则，如果查找一个对象属性且在自身不存在时，就会查找另外一个对象，相当于一个对象可以使用另外一个对象的属性和方法了。
+
+#### 关于原型继承：
+
+- 类属性使用 this 绑定
+- 类方法使用 prototype 对象来绑定
+- 为了继承属性， 使用 call 函数来传递 this
+- 为了继承方法, 使用 Object.create 连接父和子的原型
+- 始终将子类构造函数设置为自身，以获得其对象的正确类型
+- 掌握 `hasOwnProperty` 方法的使用
+
+> 参考资料：[继承与原型链- JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)、[说说原型、原型链和原型继承](https://zhuanlan.zhihu.com/p/35790971)
 
 ## 21. 关于 this
 
@@ -441,7 +456,7 @@ Object.getPrototypeOf(Object.prototype); //null
 - 特殊情况下，bind/call/apply 能够强制改变 this 的绑定。
 - 使用 new 操作符时，也会涉及 this 的绑定。
 
-### bind / call / apply
+### 1). bind / call / apply
 
 首先 call、apply、bind 第一个参数都是 this 指向的对象，call 和 apply 如果第一个参数指向 null 或 undefined 时，那么 this 会指向 windows 对象。
 
@@ -455,7 +470,7 @@ Object.getPrototypeOf(Object.prototype); //null
 - [细说 Array.prototype.slice.call](https://juejin.im/post/5a5a201f5188257345017af1)
 - [手动实现 call/apply/bind](https://juejin.im/post/5ca088fb51882568093c24ee)
 
-### 普通函数和箭头函数的 this
+### 2). 普通函数和箭头函数的 this
 
 ES5 中的普通函数：
 
@@ -617,17 +632,17 @@ es6 中 const 定义的属性是否可以改变\_为什么有人说 const 并非
 4. ES6 类默认即是严格模式
 5. ES6 子类必须在父类的构造函数中调用`super()`，这样才有 this 对象；ES5 中类继承的关系是相反的，先有子类的 this，然后用父类的方法应用在 this 上。**(此条需要修正)**
 
-### 5).AMD，CMD，CommonJS 和 ES6 的对比
+### 5).AMD、CMD、CommonJS 和 ES6 的对比
 
 参考文章：[ECMAScript 6 的模块相比 CommonJS 的 有什么优点？](https://tech.jandou.com/ECMAScript6-CommonJS-Module-Compare.html)
 
 ### 6).CommonJS、AMD 的起源
 
-​ **CommonJS 起源于 Node.js ，因此在服务端广泛使用。**对于服务端，所有的模块都存放在本地硬盘，可以**同步加载**完成，等待时间就是硬盘的读取时间。但对于浏览器，这却是一个大问题，因为模块都放在服务器端，等待时间取决于网速的快慢，可能要等很长时间，浏览器处于"假死"状态。因此，浏览器端的模块，不能采用"同步加载"（synchronous），**只能采用"异步加载"（asynchronous）。这就是 AMD 规范诞生的背景。**
+**CommonJS 起源于 Node.js ，因此在服务端广泛使用。**对于服务端，所有的模块都存放在本地硬盘，可以**同步加载**完成，等待时间就是硬盘的读取时间。但对于浏览器，这却是一个大问题，因为模块都放在服务器端，等待时间取决于网速的快慢，可能要等很长时间，浏览器处于"假死"状态。因此，浏览器端的模块，不能采用"同步加载"（synchronous），**只能采用"异步加载"（asynchronous）。这就是 AMD 规范诞生的背景。**
 
 ### 7).CMD 与 AMD 区别？
 
-​ AMD 和 CMD 最大的区别是**对依赖模块的执行时机处理不同**，而不是加载的时机或者方式不同，二者皆为异步加载模块。
+AMD 和 CMD 最大的区别是**对依赖模块的执行时机处理不同**，而不是加载的时机或者方式不同，二者皆为异步加载模块。
 
 ### 8).ES6 模块机制与 CommonJS 的区别
 
@@ -680,11 +695,11 @@ const a = {
 console.log(JSON.stringify(a)); // {"key2":110}  丢失 key1，为什么丢失？
 ```
 
-### 33.你熟悉 Typed Arrays 吗？ 如果熟悉，请解释他们与 JavaScript 中的传统数组相比的异同？
+## 33.你熟悉 Typed Arrays 吗？ 如果熟悉，请解释他们与 JavaScript 中的传统数组相比的异同？
 
-### 34.解释 TCO - 尾调用优化（Tail Call Optimization）。 有没有支持尾调用优化的 JavaScript 引擎？
+## 34.解释 TCO - 尾调用优化（Tail Call Optimization）。 有没有支持尾调用优化的 JavaScript 引擎？
 
-### 35.理解和使用正则表达
+## 35.理解和使用正则表达
 
 正则表达式主要运用在*处理文本*、*对用户输入执行规则*等
 
@@ -705,11 +720,11 @@ var re = new RegExp('ar');
 |  [`replace`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)  | 一个在字符串中执行查找匹配的 String 方法，并且使用替换字符串替换掉匹配到的子字符串。                  |
 |    [`split`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)    | 一个使用正则表达式或者一个固定字符串分隔一个字符串，并将分隔后的子字符串存储到数组中的 `String`方法。 |
 
-### 36. 错误的处理模式，捕获和调试的一些心得？
+## 36. 错误的处理模式，捕获和调试的一些心得？
 
 - try/catch
 
-### 37. TypeScript 对 JS 的改进？
+## 37. TypeScript 对 JS 的改进？
 
 主要在于`静态类型检查`，那么静态类型检查有何意义呢？
 
@@ -725,3 +740,5 @@ var re = new RegExp('ar');
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 智者见智，仁者见仁
+
+38.

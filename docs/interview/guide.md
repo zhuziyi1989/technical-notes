@@ -1,12 +1,10 @@
 ---
 nav:
-  title: 关于面试
+  title: 面试
   order: 2
 group:
-  title: 自测目录
-  order: 7
-title: 面试复习导图
-order: 1
+  title: 导图
+  order: 0
 ---
 
 # 面试复习导图
