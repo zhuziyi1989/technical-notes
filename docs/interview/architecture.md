@@ -1,12 +1,10 @@
 ---
 nav:
-  title: 关于面试
+  title: 面试
   order: 2
 group:
   title: 软件工程
   order: 6
-title: 前端构架
-order: 6
 ---
 
 # 前端构架和开发效率

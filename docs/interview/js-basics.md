@@ -5,7 +5,7 @@ nav:
 group:
   title: JavaScript
   order: 5
-title: JavaScript 语言基础
+title: 语言基础
 order: 1
 ---
 
@@ -66,9 +66,10 @@ Array.prototype.concat() - 用于合并两个或多个数组。此方法不会�
 Array.prototype.copyWithin() - 浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
 Array.prototype.entries() - 返回一个新的 Array Iterator 对象，该对象包含数组中每个索引的键/值对。
 Array.prototype.fill() - 用一个固定值去填充一个数组中从起始索引到终止索引内的全部元素。不含终止索引。【原数组改变】
-Array.prototype.find() - 返回数组中满足提供的测试函数的**第一个**元素的值。否则返回 undefined。
 Array.prototype.reverse() - 将数组中元素的位置颠倒，并返回该数组。
 Array.prototype.includes() – 用来判断一个数组是否包含一个指定的值，如果包含则返回 true，否则返回 false。
+
+Array.prototype.find() - 返回数组中满足提供的测试函数的**第一个**元素的值。否则返回 undefined。
 Array.prototype.every() - 方法测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。
 Array.prototype.filter() – _创建一个新数组_, 其包含通过所提供函数实现的测试的所有元素。【原数组不变】
 Array.prototype.every() – 测试数组的**所有元素**是否都通过了指定函数的测试。
@@ -445,7 +446,7 @@ Object.getPrototypeOf(Object.prototype); //null
 - 始终将子类构造函数设置为自身，以获得其对象的正确类型
 - 掌握 `hasOwnProperty` 方法的使用
 
-> 参考资料：[继承与原型链- JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)、[说说原型、原型链和原型继承](https://zhuanlan.zhihu.com/p/35790971)
+> 参考资料：[继承与原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)、[说说原型、原型链和原型继承](https://zhuanlan.zhihu.com/p/35790971)、[JavaScript 深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)、[JavaScript 深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
 
 ## 21. 关于 this
 
@@ -565,7 +566,7 @@ Object.assign({}, state, { visibilityFilter: action.filter });
 
 参考资料：： [浮点数为什么不精确？](https://juejin.im/entry/575543857db2a2006993114e)
 
-## 27. 事件循环(Event Loop)❗️
+## 27. 事件循环(Event Loop)
 
 > 参考 ①：<https://juejin.im/post/5bac87b6f265da0a906f78d8>
 >
