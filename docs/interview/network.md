@@ -136,3 +136,11 @@ HTTP2 中
 JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案
 
 > 阮一峰：[JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
+
+7. ## 如何取消中止一次请求？
+
+   ```javascript
+   const controller = new AbortController(); // 使用 AbortController 对象中止
+   ```
+
+   比如`Promise.all`一旦执行就没有 API 来取消中止它们，因为 promise 中没有“取消”的概念。 `AbortController`可以帮助我们解决这个问题，但它不是 Promise API 的一部分。

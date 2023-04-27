@@ -18,9 +18,9 @@ order: 1
 
 ## 1. JavaScript 数据类型
 
-### 1).基本数据类型
+### 1).基本数据类型（或原始数据类型）
 
-7 种原始(基本)数据类型 ▶ `栈内存`存储的是值
+7 种基本数据类型 ▶ `栈内存`存储的是值
 
 - Null （表示缺少的标识，指示变量未指向任何对象）
 - Undefined（一个没有被赋值的变量会有个默认值 undefined，也就说已存在，但还没值）
@@ -30,11 +30,11 @@ order: 1
 - Symbol (ECMAScript 6 新定义，用于唯一的标识符，比如身份证号码。)
 - BigInt（ECMAScript 2020 新提案，用于任意长度的整数。）
 
-> - 在 JavaScript 中，Number 可以准确表达的最大数字是 2^53，比 2^53 大的所有数字可以使用 BigInt 表达。
-> - 如果后端 API 返回了一个大于 2^53 的数字怎么办？ 可让后端转换成字符串形式
+> - 在 JavaScript 中，Number 的最大数字是 2^53-1，比 2^53-1 大的所有数字可以使用 BigInt 表达。
+> - 如果后端 API 返回了一个大于 2^53-1 的数字怎么办？ 可让后端转换成字符串形式
 > - `undefined`和`null`的一些故事 ▶ [Link](https://2ality.com/2021/01/undefined-null-revisited.html)
 
-### 2).复杂数据类型
+### 2).复杂数据类型（或引用数据类型）
 
 1 种复杂(对象)数据类型 ▶ `堆内存`存储的是地址
 
@@ -62,6 +62,8 @@ defer 属性规定是否对脚本执行进行延迟，直到页面加载为止�
 详细参考：[JavaScript 标准内置对象 Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 举例：
+
+```javascript
 Array.prototype.concat() - 用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
 Array.prototype.copyWithin() - 浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
 Array.prototype.entries() - 返回一个新的 Array Iterator 对象，该对象包含数组中每个索引的键/值对。
@@ -75,6 +77,7 @@ Array.prototype.filter() – _创建一个新数组_, 其包含通过所提供�
 Array.prototype.every() – 测试数组的**所有元素**是否都通过了指定函数的测试。
 Array.prototype.some() – 测试是否**至少有一个元素**通过由提供的函数实现的测试。
 Array.prototype.forEach() - 对数组的每个元素执行一次提供的函数。
+```
 
 ### 1).哪些 API 会改变原数组？
 
@@ -119,7 +122,33 @@ Array.from(new Set(arr))
 
 ### 4).数组乱序
 
+```javascript
+function shuffle(array) {
+  var len = array.length,
+    t,
+    i;
+
+  // 循环剩余的元素
+  while (len) {
+    // 生成 [0,len) 之间的随机数，
+    i = Math.floor(Math.random() * len--);
+
+    // 交换元素 （直接操作原素组，节省内存和循环次数）
+    t = array[len];
+    array[len] = array[i];
+    array[i] = t;
+    // 也可以直接用解构交换元素 [array[i],array[len]] = [array[len],array[i]]
+  }
+
+  return array;
+}
+```
+
 参考关键词：洗牌算法
+
+每个元素在同一位置的概率相同（随机数），直接操作元素组遍历一次就完成。
+
+参考文章：[Fisher–Yates Shuffle](https://bost.ocks.org/mike/shuffle/)
 
 ### 5).类数组的特性
 
@@ -416,7 +445,7 @@ Animal.call(cat); //用 call 将环境上下文绑定到实例cat上，并运行
 
 ### 1). 什么是原型链？
 
-​ 当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 Object.prototype 的原型时，此时原型为 null，查找停止。 这种通过原型链接的逐级向上的查找链被称为原型链。
+当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 Object.prototype 的原型时，此时原型为 null，查找停止。 这种通过原型链接的逐级向上的查找链被称为原型链。
 
 每个对象都有它的原型对象，且原型对象是独立的！每个*实例*对象（ object ）都有一个私有属性（称之为 \_\_proto\_\_ 或 [[prototype]]）指向它的构造函数的*原型对象*（**prototype** ）。该原型对象也有一个自己的原型对象( \_\_proto\_\_ ) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。如图：
 
@@ -435,7 +464,7 @@ Object.getPrototypeOf(Object.prototype); //null
 
 ### 2). 什么是原型继承？
 
-​ 一个对象可以使用另外一个对象的属性或者方法，就称之为继承。具体是通过将这个对象的原型设置为另外一个对象，这样根据原型链的规则，如果查找一个对象属性且在自身不存在时，就会查找另外一个对象，相当于一个对象可以使用另外一个对象的属性和方法了。
+一个对象可以使用另外一个对象的属性或者方法，就称之为继承。具体是通过将这个对象的原型设置为另外一个对象，这样根据原型链的规则，如果查找一个对象属性且在自身不存在时，就会查找另外一个对象，相当于一个对象可以使用另外一个对象的属性和方法了。
 
 #### 关于原型继承：
 
@@ -742,4 +771,12 @@ var re = new RegExp('ar');
 
 智者见智，仁者见仁
 
-38.
+## 38.Cookie、sessionStorage、localStorage 区别？
+
+Cookie、SessionStorage、 LocalStorage 都是浏览器的本地存储。
+
+它们的共同点：都是存储在浏览器本地的。
+
+它们的区别：Cookie 是由服务器端写入的，而 SessionStorage、 LocalStorage 都是由前端写入的，Cookie 的生命周期是由服务器端在写入的时候就设置好的，LocalStorage 是写入就一直存在，除非手动清除，SessionStorage 是页面关闭的时候就会自动清除。Cookie 的存储空间比较小大概 4KB，SessionStorage、 LocalStorage 存储空间比较大，大概 5M。Cookie、SessionStorage、 LocalStorage 数据共享都遵循同源原则，SessionStorage 还限制必须是同一个页面。在前端给后端发送请求的时候会自动携带 Cookie 中的数据，但是 SessionStorage、 LocalStorage 不会。由于它们的以上区别，所以它们的应用场景也不同，Cookie 一般用于存储登录验证信息 SessionID 或者 token，LocalStorage 常用于存储不易变动的数据，减轻服务器的压力，SessionStorage 可以用来检测用户是否是刷新进入页面，如音乐播放器恢复播放进度条的功能。
+
+## 39. HashRouter 和 HistoryRouter 的区别和原理？

@@ -1,12 +1,10 @@
 ---
 nav:
-  title: 关于面试
+  title: 面试
   order: 2
 group:
-  title: JavaScript
-  order: 5
-title: 框架的使用
-order: 5
+  title: 框架的使用
+  order: 9
 ---
 
 # 框架的使用
@@ -38,7 +36,7 @@ Diff算法的优化：将标准的diff算法的O(n^3)复杂度降低到了O(n)�
 ```
 
 逐层进行节点比较
-![dom-diff](../../assets/images/dom-diff.jpg)
+![dom-diff](../assets/images/dom-diff.jpg)
 
 更多解析：[深入浅出 React（四）：虚拟 DOM Diff 算法解析](https://infoq.cn/article/react-dom-diff)
 
@@ -102,11 +100,11 @@ hash 模式是依靠 onhashchange 事件(监听 location.hash 的改变)，而 h
 
 - 模板渲染的方式区别：
 
-  ​ React 在 JSX 中使用**原生的 JS 语法**来实现<u>插值，条件渲染，循环渲染</u>等等。而 Vue 则需要依赖<u>指令</u>来进行，更加容易上手但是封装的程度更高，调试成本更大，难以定位 Bug。
+  React 在 JSX 中使用**原生的 JS 语法**来实现<u>插值，条件渲染，循环渲染</u>等等。而 Vue 则需要依赖<u>指令</u>来进行，更加容易上手但是封装的程度更高，调试成本更大，难以定位 Bug。
 
 - 性能差异：
 
-  ​ 在 React 中组件的更新渲染是从数据发生变化的<u>根组件开始往子组件</u>逐层重新渲染，而组件的生命周期有 shouldComponentUpdate()函数供给开发者优化组件在不需要更新的时候返回 false。而在 Vue 中是通过 watcher 监听到数据的变化之后通过自己的 diff 算法，在 virtualDom 中直接找到以最低成本更新视图的方式。
+  在 React 中组件的更新渲染是从数据发生变化的<u>根组件开始往子组件</u>逐层重新渲染，而组件的生命周期有 shouldComponentUpdate()函数供给开发者优化组件在不需要更新的时候返回 false。而在 Vue 中是通过 watcher 监听到数据的变化之后通过自己的 diff 算法，在 virtualDom 中直接找到以最低成本更新视图的方式。
 
 - Vue 更适合开发周期更短的相对小型的项目，React 更适合构建稳定大型的应用，可定制化的能力更强。
 
@@ -114,7 +112,7 @@ hash 模式是依靠 onhashchange 事件(监听 location.hash 的改变)，而 h
 
 ➤ 参考资料：<https://t.cn/RmV1t56> 废弃了三个带有 Will 的钩子函数，是为 react 新版本的异步渲染做铺垫。
 
-![lifeCycle](../../assets/images/lifeCycle.jpg)
+![lifeCycle](../assets/images/lifeCycle.jpg)
 
 ## 11、React 组合 vs 继承
 
@@ -193,11 +191,11 @@ Currying 使用场景：参数复用、延迟执行。
 
 2. Redux 就是一个 JavaScript 状态容器(Store)，这个状态(State)只读，想要改变必须使用纯函数(Reducers)来执行修改。
 
-![redux-1.png](../../assets/images/redux-1.png)
+![redux-1.png](../assets/images/redux-1.png)
 
 Redux 的工作流程:
 
-![redux-2.png](../../assets/images/redux-2.png)
+![redux-2.png](../assets/images/redux-2.png)
 
 > 参考：
 >
@@ -219,3 +217,4 @@ Redux 的工作流程:
 
 1. [精读《怎么用 React Hooks 造轮子》](https://juejin.im/post/5bf20ce6e51d454a324dd0e6)
 2. [Hook 官方解读](https://zh-hans.reactjs.org/docs/hooks-intro.html)
+3. [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)

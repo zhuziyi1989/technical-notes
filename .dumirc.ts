@@ -38,6 +38,7 @@ export default defineConfig({
     // logo: withGH('dumi-theme-chakra-logo.png'),
     logo: "https://front.jandou.com/favicon.png",
     // helmetIcon: '🍺',
+    theme: { '@c-primary': '#1DA57A' },
     settingPanelVisible: true,
     thumbBackground: true,
     description: 'no desc',
