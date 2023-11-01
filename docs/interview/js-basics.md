@@ -445,9 +445,9 @@ Animal.call(cat); //用 call 将环境上下文绑定到实例cat上，并运行
 
 ### 1). 什么是原型链？
 
-当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 Object.prototype 的原型时，此时原型为 null，查找停止。 这种通过原型链接的逐级向上的查找链被称为原型链。
+当对象查找一个属性的时候，如果没有在自身找到，那么就会查找自身的原型，如果原型还没有找到，那么会继续查找原型的原型，直到找到 Object.prototype 的原型时，此时原型为 null，查找停止。这种通过原型链接的逐级向上的查找链被称为原型链。
 
-每个对象都有它的原型对象，且原型对象是独立的！每个*实例*对象（ object ）都有一个私有属性（称之为 \_\_proto\_\_ 或 [[prototype]]）指向它的构造函数的*原型对象*（**prototype** ）。该原型对象也有一个自己的原型对象( \_\_proto\_\_ ) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。如图：
+每个对象都有它的原型对象，且原型对象是独立的！每个*实例*对象（ object ）都有一个私有属性（称之为 \_\_proto\_\_ 或 [[prototype]]）指向它的<u>构造函数</u>的*原型对象*（**prototype** ）。该原型对象也有一个自己的原型对象( \_\_proto\_\_ ) ，层层向上直到一个对象的原型对象为 `null`。根据定义，`null` 没有原型，并作为这个**原型链**中的最后一个环节。如图：
 
 <img src="../assets/images/prototype.jpg" style="zoom:50%;" />
 
@@ -780,3 +780,13 @@ Cookie、SessionStorage、 LocalStorage 都是浏览器的本地存储。
 它们的区别：Cookie 是由服务器端写入的，而 SessionStorage、 LocalStorage 都是由前端写入的，Cookie 的生命周期是由服务器端在写入的时候就设置好的，LocalStorage 是写入就一直存在，除非手动清除，SessionStorage 是页面关闭的时候就会自动清除。Cookie 的存储空间比较小大概 4KB，SessionStorage、 LocalStorage 存储空间比较大，大概 5M。Cookie、SessionStorage、 LocalStorage 数据共享都遵循同源原则，SessionStorage 还限制必须是同一个页面。在前端给后端发送请求的时候会自动携带 Cookie 中的数据，但是 SessionStorage、 LocalStorage 不会。由于它们的以上区别，所以它们的应用场景也不同，Cookie 一般用于存储登录验证信息 SessionID 或者 token，LocalStorage 常用于存储不易变动的数据，减轻服务器的压力，SessionStorage 可以用来检测用户是否是刷新进入页面，如音乐播放器恢复播放进度条的功能。
 
 ## 39. HashRouter 和 HistoryRouter 的区别和原理？
+
+## 40. MVVM 和 MVC 有何区别？
+
+​ MVVM 和 MVC 是两种常见的架构设计模式，它们都是用来帮助组织代码并分离关注点的。下面是它们之间的区别：
+
+​ MVC（Model-View-Controller）：MVC 是一种经典的架构设计模式，它将应用程序分成三个部分：模型（Model）、视图（View）和控制器（Controller）。其中，模型用于表示数据和业务逻辑，视图负责展示数据给用户，而控制器则协调模型和视图之间的交互。
+
+​ MVVM（Model-View-ViewModel）：MVVM 也是一种架构设计模式，它将应用程序分为三个部分：模型（Model）、视图（View）和视图模型（ViewModel）。其中，视图模型是一个中介层，它封装了视图所需的数据和行为，并向视图提供这些数据和行为的接口，以便视图能够正确地显示和响应用户的操作。
+
+​ 与 MVC 相比，MVVM 的一个重要区别在于视图模型（ViewModel）的存在。它帮助解耦视图和模型之间的联系，并使得视图可以更加轻松地实现复杂的交互行为。此外，<u>MVVM 还支持双向数据绑定</u>，即可以自动更新视图和模型之间的数据变化，提高了开发效率和代码质量。

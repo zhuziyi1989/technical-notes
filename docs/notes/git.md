@@ -17,8 +17,7 @@ group:
 - git rm file 从版本库里删除 file，本地文件不受影响
 - git commit -m "代码提交信息/修改注释" 提交修改到版本可以
 - git status 查看状态
-- `git log --no-merges --author=zhuziyi --pretty=format:'* %s <%ad>'` 查看本人不含有 merges 的日志,并美化格式化时间
-  - `git log --no-merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative`
+- `git log --no-merges --author=zhuziyi --pretty=format:'* %s <%ad>'` 查看本人不含有 merges 的日志,并美化格式化时间 `git log --no-merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative`
 - git reflog 查看详细命令日志
 - git clone -b {分支名} {仓库地址} 克隆远程仓库，默认情况是克隆主分支，若要克隆其它分支
 
@@ -40,12 +39,12 @@ git reset --hard HEAD  //放弃本地所有的改动（谨慎操作！请先提�
 ```bash
 #  ⚠️⚠️⚠️ 谨慎操作！请先将本地改动 commit + stash 存档
 git reset --hard HEAD^   // 硬回滚到上一个版本，`HEAD^` 即上一个版本
-git reset --hard 3628164 // 回到commit id是"3628164"的版本
+git reset --hard 3628164 // 回到 commit id 是"3628164"的版本
 ```
 
 ### git rm
 
-如何忽略**已经提交**的文件或文件夹 (.gitignore 文件无效)？
+如何忽略**已经提交**的文件或文件夹？ (当 .gitignore 文件都无效时)
 
 ```bash
 git rm --cached <file> //这个命令会直接从暂存区删除文件，工作区则不做出改变。

@@ -23,7 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "dumi": "^2.0.2",
+    "dumi": "^2.2.14",
     "dumi-theme-chakra": "^0.0.7",
     "gh-pages": "^5.0.0",
     "husky": "^8.0.1",

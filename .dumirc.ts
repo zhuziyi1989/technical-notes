@@ -35,9 +35,8 @@ export default defineConfig({
   // pass theme config
   themeConfig: {
     // name: '前端指南',
-    // logo: withGH('dumi-theme-chakra-logo.png'),
-    logo: "https://front.jandou.com/favicon.png",
-    // helmetIcon: '🍺',
+    logo: withGH('favicon.png'),
+    helmetIcon: '',
     theme: { '@c-primary': '#1DA57A' },
     settingPanelVisible: true,
     thumbBackground: true,

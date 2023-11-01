@@ -21,14 +21,14 @@ group:
 - [块级格式化上下文（BFC）](https://zhuanlan.zhihu.com/p/25321647) 可触发 BFC：根元素、浮动元素、绝对定位、display(inline-block、table-cells、flex)、overflow(hidden、auto、scroll)
 - 文档流（定位流、浮动流和普通流）
 - [z-index](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Positioning#介绍_z-index) 描述元素的堆叠顺序
+- [position:sticky 粘性定位的几种巧妙应用](https://segmentfault.com/a/1190000039858711)
 
 ## 3. 布局
 
-- 纯 CSS 盒子水平垂直居中的实现方法 [Demo](https://interview.jandou.com/demo/box-center.html)
+- 纯 CSS 盒子水平垂直居中的实现方法 [Demo](https://zhuziyi1989.github.io/demo/box-center.html)
 - [Flex](https://zhuanlan.zhihu.com/p/25303493) 、[@MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) 、[flex-direction](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg): row/column/row-reverse/column-reverse 起始线和终止线、[justify-content](https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg)
 - Grid 布局 ❌
 - BOM 盒模型(IE 盒模型的内容含 border 和 padding，box-sizing: border-box; W3C 盒模型 box-sizing: content-box) [box-sizing MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing)
-- calc 动态计算
 - 逻辑像素、设备像素、物理像素 dpr ❌
 
 ## 4.移动端布局方案
@@ -41,7 +41,8 @@ group:
 - 媒体查询
 - 百分比布局
 - 移动端 1px 问题
-- viewport
+- viewport 屏幕禁止缩放
+- calc 动态计算
 
 问题例子：
 
@@ -51,7 +52,7 @@ group:
 
 ## CSS 选择器
 
-- 权重（!important → 行内 → id → class/属性/伪类 → 元素标签 → 其他）
+- [优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity) 权重（!important → 行内 → id → class/属性/伪类 → 元素标签（自定义属性等） → 其他）
 
 - 选择器 nth-child() [MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:nth-child)
 

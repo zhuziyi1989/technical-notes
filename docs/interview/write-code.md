@@ -135,7 +135,7 @@ array_test.filter((item, index, array) => {
 
 ```javascript
 /**
- * 手写源码系列 call
+ * 手写源码系列 call（手写源码系列 apply、bind， 类似 call）
  *
  * 思路：
  * 1、为传入的context扩展一个属性，将原函数指向这个属性
@@ -183,9 +183,19 @@ console.log(test1.meCall(null, 1, 2, 3));
 console.log(test1.meCall(person, 1, 2, 3));
 ```
 
-## 6.手写源码系列 apply、bind → 类似 call
+## 6. 手写一个 Promise
 
-略...
+常见面试问题：
+
+1. Promise 解决了什么问题？
+
+   在传统的异步编程中，<u>如果异步之间存在依赖关系</u>，就需要通过层层嵌套回调的方式满足这种依赖，如果嵌套层数过多，可读性和可以维护性都会变得很差，产生所谓的“回调地狱”，而 Promise 将嵌套调用改为<u>链式调用</u>，增加了可阅读性和可维护性。也就是说，Promise 解决的是异步编码风格的问题。
+
+2. Promise 的业界实现都有哪些？
+3. Promise 常用的 API 有哪些？
+4. 能不能手写一个符合 Promise/A+ 规范的 Promise?
+5. Promise 在事件循环中的执行过程是怎样的？
+6. Promise 有什么缺陷，可以如何解决？
 
 ## 7.逗号操作符
 
